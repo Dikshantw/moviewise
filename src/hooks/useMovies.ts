@@ -5,6 +5,7 @@ export interface Movies {
   id: number;
   original_title: string;
   poster_path: string;
+  vote_average: number;
 }
 
 interface List {
