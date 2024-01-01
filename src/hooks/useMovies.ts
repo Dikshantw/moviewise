@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
-interface Movies {
+export interface Movies {
   id: number;
   original_title: string;
+  poster_path: string;
 }
 
 interface List {

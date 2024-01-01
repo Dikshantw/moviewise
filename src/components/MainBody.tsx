@@ -1,5 +1,6 @@
-import { Button } from "@chakra-ui/react";
+import { Button, SimpleGrid } from "@chakra-ui/react";
 import useMovies from "../hooks/useMovies";
+import MovieCard from "./MovieCard";
 
 const MainBody = () => {
   const { movies, error, page, setPage, fetchMovies } = useMovies();
@@ -10,11 +11,11 @@ const MainBody = () => {
   return (
     <>
       {error && <p>{error}</p>}
-      <ul>
+      <SimpleGrid columns={4} spacing={4}>
         {movies.map((movie) => (
-          <li key={movie.id}>{movie.original_title}</li>
+          <MovieCard key={movie.id} movies={movie}></MovieCard>
         ))}
-      </ul>
+      </SimpleGrid>
       <Button onClick={handleNextPage}>{page}</Button>
     </>
   );
